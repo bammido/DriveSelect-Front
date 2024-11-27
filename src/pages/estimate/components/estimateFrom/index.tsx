@@ -3,7 +3,7 @@ import Input from "../../../../components/input";
 import Label from "../../../../components/label/input";
 import Button from "../../../../components/button";
 
-export default function RideForm() {
+export default function EstimateForm() {
 
     const { handleChange, handleSubmit} = useFormikContext()
 
