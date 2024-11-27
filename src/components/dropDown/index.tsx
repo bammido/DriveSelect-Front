@@ -31,7 +31,7 @@ return <div>
         <div id="dropdown" className={`z-10 ${active? '': 'hidden'} divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700`}>
             <ul className="py-2 text-sm text-gray-200">
                 {
-                    options.map(option=> <li>
+                    options.map(option=> <li key={option.label}>
                         <span 
                             className="block px-4 py-2 hover:bg-gray-600 hover:text-white" 
                             onClick={() => handleChange(option)}>{option.label}</span>

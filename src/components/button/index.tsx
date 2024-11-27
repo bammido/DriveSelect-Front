@@ -10,7 +10,7 @@ interface IButtonVariants {
     variant?: 'default' | 'green'| 'blue'
 }
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & ButtonContentProps & IButtonVariants;
+type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & ButtonContentProps & IButtonVariants;
 
 export default function Button({children, text, variant, ...rest}: ButtonProps) {
     const defaultClass = "focus:outline-none text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"

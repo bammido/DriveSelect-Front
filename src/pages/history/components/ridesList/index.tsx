@@ -60,10 +60,10 @@ function RideRow({ ride }: { ride: IRide }){
             {ride.destination}
         </td>
         <td className="px-6 py-4">
-            {ride.distance / 1000} km
+            {Number((ride.distance / 1000).toFixed(2))} km
         </td>
         <td className="px-6 py-4">
-            {hours} hora{`${hours === '1' ? '' : 's'}`} {minutes} minutos
+            {hours}h {minutes}m
         </td>
         <td className="px-6 py-4 text-green-600">
             {formatToBRL(ride.value)}

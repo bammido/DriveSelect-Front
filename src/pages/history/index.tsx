@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import getRides, { IRide } from "../../service/driveSelect/functions/getRides"
 import DropDown from "../../components/dropDown"
@@ -31,6 +31,15 @@ export default function History() {
         }
     }
 
+    const memorizedGetDrivers = useCallback(
+        getDrivers,
+        []
+    )
+    const memorizedSearch = useCallback(
+        search,
+        [customer_id]
+    )
+
     async function search() {
         type Query = {
             customer_id: string;
@@ -57,12 +66,13 @@ export default function History() {
     }
 
     useEffect(() => {
-        getDrivers()
-    }, [])
+        memorizedGetDrivers()
+    }, [memorizedGetDrivers])
     
     useEffect(() => {
-        search()
-    }, [customer_id])
+        memorizedSearch()
+    }, [memorizedSearch])
+
 
     return <div className="flex flex-col gap-10">
         <h1 className="text-5xl font-bold underline text-center">Histórico de viagens</h1>
