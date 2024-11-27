@@ -8,8 +8,10 @@ interface IGlobalContext {
     handleEstimate: (estimate: IEstimate) => void
 }
 
-interface IEstimate extends IPostRideEstimateRes {
+export interface IEstimate extends IPostRideEstimateRes {
     customer_id: string;
+    originString: string;
+    destinationString: string;
 }
 
 export function GlobalContextProvider({ children }: { children: React.ReactNode }) {

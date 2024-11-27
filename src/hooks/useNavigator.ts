@@ -6,12 +6,18 @@ export default function useNavigator() {
     function gotToHome() {
         navigation('/')
     }
+    
     function gotToOptions() {
         navigation('/options')
+    }
+    
+    function goToHistory(customer_id: string) {
+        navigation(`/history/${customer_id}`)
     }
 
     return {
         gotToHome,
-        gotToOptions
+        gotToOptions,
+        goToHistory
     }
 }

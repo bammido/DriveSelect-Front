@@ -29,6 +29,7 @@ export interface IPostRideEstimateRes {
     origin: ICoords;
     duration: string;
     options: IOption[];
+    distance: number;
     routeResponse: any;
 }
 

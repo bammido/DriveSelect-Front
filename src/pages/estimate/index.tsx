@@ -21,7 +21,7 @@ export default function Estimate() {
             const response = await postRideEstimate({
                 body: values,
                 onError: (error: any) => {
-                    toast.error(error?.response?.data?.error_description || "Erro!", {theme: "dark"})
+                    toast.error(error?.response?.data?.error_description || "Erro, verifique a conexão e tente novamente!", {theme: "dark"})
                 }
             });
 
@@ -29,12 +29,15 @@ export default function Estimate() {
                 return
             }
 
-            handleEstimate({...response.data, customer_id: values.customer_id})
+            handleEstimate({...response.data, 
+                customer_id: values.customer_id, 
+                destinationString: values.destination, 
+                originString: values.origin
+            })
             gotToOptions()
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error: any) {
-            if(error.response){
-                toast.error("Erro!", {theme: "dark"})
-            }
+            toast.error("Erro, verifique a conexão e tente novamente!", {theme: "dark"})
         }
     }
 

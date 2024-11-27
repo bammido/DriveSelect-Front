@@ -3,7 +3,7 @@ import StarIcon from "../../../../../../components/starIcon";
 import formatToBRL from "../../../../../../helpers/functions/formatToBRL";
 import { IOption } from "../../../../../../service/driveSelect/functions/postRideEstimate";
 
-export default function OptionCard({ option }: { option: IOption }) {
+export default function OptionCard({ option, handleSubmit }: { option: IOption, handleSubmit: (option: IOption) => void }) {
     return <div className="max-w-sm p-4 rounded-lg shadow bg-gray-800 border-gray-700 flex flex-col justify-between">
     <div>
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">{option.name}</h5>
@@ -21,7 +21,7 @@ export default function OptionCard({ option }: { option: IOption }) {
         <span className="text-green-600">{formatToBRL(option.value)}</span>
         <Button 
             text="Escolher"
-            onClick={() => {}}
+            onClick={() => handleSubmit(option)}
         />
     </div>
 </div>
