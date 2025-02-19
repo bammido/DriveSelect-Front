@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const url = import.meta.env.DRIVESELECT_API_URL
+
 export const driveSelect = axios.create({
-    baseURL: 'http://localhost:8080'
+    baseURL: url
 })
