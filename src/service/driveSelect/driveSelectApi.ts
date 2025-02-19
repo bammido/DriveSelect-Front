@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = import.meta.env.DRIVESELECT_API_URL
+const url = import.meta.env.VITE_DRIVESELECT_API_URL
 
 console.log(url)
 
